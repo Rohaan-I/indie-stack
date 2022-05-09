@@ -76,8 +76,6 @@ export default function AdminSlug() {
     const [slug, setSlug] = useState(post.slug);
     const [markdown, setMarkdown] = useState(post.markdown);
 
-    console.log(post)
-    
     return (
         <Form method="post">
             <p>
@@ -91,7 +89,7 @@ export default function AdminSlug() {
                     name="title"
                     className={inputClassName}
                     value={title}
-                    onChange={(evt) => setTitle(evt.target)}
+                    onChange={(evt) => setTitle(evt.target.value)}
                 />
                 </label>
             </p>
@@ -106,7 +104,7 @@ export default function AdminSlug() {
                     name="slug"
                     className={inputClassName}
                     value={slug}
-                    onChange={(evt) => setSlug(evt.target)}
+                    onChange={(evt) => setSlug(evt.target.value)}
                 />
                 </label>
             </p>
@@ -126,7 +124,7 @@ export default function AdminSlug() {
                 name="markdown"
                 className={`${inputClassName} font-mono`}
                 value={markdown}
-                onChange={(evt) => setMarkdown(evt.target)}
+                onChange={(evt) => setMarkdown(evt.target.value)}
                 />
             </p>
             <p className="text-right">
